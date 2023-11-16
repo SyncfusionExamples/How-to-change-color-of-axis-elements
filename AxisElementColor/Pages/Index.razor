@@ -1,0 +1,50 @@
+﻿@page "/"
+
+@using Syncfusion.Blazor.Charts
+
+<SfChart>
+
+    <ChartEvents OnAxisLabelRender="AxisRender"></ChartEvents>
+
+    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category" MinorTicksPerInterval="2">
+        <ChartAxisMajorGridLines Width="1" Color="blue" />
+        <ChartAxisMinorGridLines Width="0.5" Color="red" />
+        <ChartAxisMajorTickLines Width="1" Color="blue" />
+        <ChartAxisMinorTickLines Width="1" Color="red" />
+    </ChartPrimaryXAxis>
+
+    <ChartSeriesCollection>
+        <ChartSeries DataSource="@MedalDetails" XName="X" YName="YValue" Type="ChartSeriesType.Column" />
+    </ChartSeriesCollection>
+
+</SfChart>
+
+@code {
+
+    public class ChartData
+    {
+        public string X { get; set; }
+        public double YValue { get; set; }
+    }
+
+    public List<ChartData> MedalDetails = new List<ChartData>
+    {
+        new ChartData { X= "USA", YValue= 46 },
+        new ChartData { X= "GBR", YValue= 27 },
+        new ChartData { X= "CHN", YValue= 26 },
+        new ChartData { X= "UK", YValue= 23 },
+        new ChartData { X= "AUS", YValue= 16 },
+        new ChartData { X= "IND", YValue= 36 },
+        new ChartData { X= "DEN", YValue= 12 },
+        new ChartData { X= "MEX", YValue= 20 },
+    };
+
+    public void AxisRender(AxisLabelRenderEventArgs args)
+    {
+        if (args.Axis.Name == "PrimaryXAxis")
+        {
+            args.LabelStyle.Color = "blue";
+        }
+    }
+
+}
