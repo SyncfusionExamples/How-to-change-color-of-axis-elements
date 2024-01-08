@@ -1,12 +1,10 @@
 # How-to-change-color-of-axis-elements
 
-This article explains how to change the color axis element in blazor chart componenet.
+This article explains how to change the color of axis element in Blazor Chart Componenet.
 
-[Blazor Charts](https://www.syncfusion.com/blazor-components/blazor-charts) provides support to customize the appearance of the **ChartAxis** elements such as grid lines, tick lines, axis label and axis title. 
+**Customizing axis label color using the OnAxisLabelRender event in Blazor chart**
 
-**Changing axis label color using OnAxisLabelRender event in Blazor chart component**
-
-Chart axis label color can be customized by using [OnAxisLabelRender](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartEvents.html#Syncfusion_Blazor_Charts_ChartEvents_OnAxisLabelRender) event.
+[Blazor Charts](https://www.syncfusion.com/blazor-components/blazor-charts) provides support to customize the appearance of the **ChartAxis** elements such as grid lines, tick lines, axis label and axis title. Chart axis label color can be customized by using [OnAxisLabelRender](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartEvents.html#Syncfusion_Blazor_Charts_ChartEvents_OnAxisLabelRender) event.
 
 The following properties are available in the [AxisLabelRenderEventArgs](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.AxisLabelRenderEventArgs.html).
 
@@ -16,9 +14,11 @@ The following properties are available in the [AxisLabelRenderEventArgs](https:/
 
 •	[Value](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.AxisLabelRenderEventArgs.html#Syncfusion_Blazor_Charts_AxisLabelRenderEventArgs_Value) – Specifies the value of the axis label.
 
-The following code illustrate how to change the color of axis elements.
+We can also customize the `Width` and `Color` of  gridlines and ticklines of the chart axis using [ChartAxisMajorGridLines](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxisMajorGridLines.html#Syncfusion_Blazor_Charts_ChartAxisMajorGridLines__ctor), [ChartAxisMinorGridLines](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxisMinorGridLines.html#Syncfusion_Blazor_Charts_ChartAxisMinorGridLines__ctor),[ChartAxisMajorTickLines](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxisMajorTickLines.html#Syncfusion_Blazor_Charts_ChartAxisMajorTickLines__ctor) and [ChartAxisMinorTickLines](https://help.syncfusion.com/cr/blazor/Syncfusion.Blazor.Charts.ChartAxisMinorTickLines.html#Syncfusion_Blazor_Charts_ChartAxisMinorTickLines__ctor) propety of the corresponding axis.
 
-**C#**
+The following code example illustrates how to customize the color of axis elements.
+
+**Index.razor**
 
 ```cshtml
 
@@ -73,7 +73,7 @@ The following code illustrate how to change the color of axis elements.
 
 ```
 
-The following screenshot illustrate the output of the above code snippet.
+The following screenshot illustrates the output of the above code snippet.
 
 **Output:**
  
